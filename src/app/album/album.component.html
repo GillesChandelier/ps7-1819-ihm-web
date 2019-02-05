@@ -1,0 +1,12 @@
+<div class="c-row row-title">
+  <h1 class="title">PolyMuseum - Album</h1>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div *ngIf="photos" style="text-align: left; margin-left: 14px">
+  <div *ngFor="let photo of photos">
+    <app-photo (click)="zoomPhoto()" [photo]="photo"  style="float: left; width: 25%"></app-photo>
+  </div>
+</div>

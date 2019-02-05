@@ -1,0 +1,97 @@
+[
+    {
+        "type": "co-workers",
+        "visitors": [
+            {
+                "name": "Francis",
+                "age": 42,
+                "gender": "M"
+            },
+            {
+                "name": "Francis",
+                "age": 32,
+                "gender": "M"
+            },
+            {
+                "name": "Marcel",
+                "age": 21,
+                "gender": "M"
+            },
+            {
+                "name": "Foulques",
+                "age": 50,
+                "gender": "M"
+            },
+            {
+                "name": "Marie",
+                "age": 23,
+                "gender": "F"
+            }
+        ]
+    },
+    {
+        "type": "etudiants",
+        "visitors": [
+            {
+                "name": "Harry",
+                "age": 18,
+                "gender": "M"
+            },
+            {
+                "name": "Ron",
+                "age": 18,
+                "gender": "M"
+            },
+            {
+                "name": "Hermione",
+                "age": 18,
+                "gender": "F"
+            },
+            {
+                "name": "Neville",
+                "age": 18,
+                "gender": "M"
+            },
+            {
+                "name": "Giny",
+                "age": 17,
+                "gender": "F"
+            }
+        ]
+    },
+    {
+        "type": "retraites",
+        "visitors": [
+            {
+                "name": "Gerard",
+                "age": 74,
+                "gender": "M"
+            },
+            {
+                "name": "Bernard",
+                "age": 81,
+                "gender": "M"
+            },
+            {
+                "name": "Monique",
+                "age": 78,
+                "gender": "F"
+            },
+            {
+                "name": "Foulques",
+                "age": 75,
+                "gender": "M"
+            },
+            {
+                "name": "Jacqueline",
+                "age": 76,
+                "gender": "F"
+            },
+            {
+                "name": "Isabelle",
+                "age": 45,
+                "gender": "F"
+            }
+        ]
+    }
+]

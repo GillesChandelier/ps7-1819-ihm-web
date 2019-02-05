@@ -1,0 +1,10 @@
+<div *ngIf="question;else nullCase ">
+
+<app-question-text [description]="question.text"></app-question-text>
+
+<app-answer-card (nextQuestion) ="onNextQuestion(event)" [Answer]="question.answers" [Id]="idQuestion"></app-answer-card>
+</div>
+
+<ng-template nullCase>Loading data...</ng-template>
+<!--<app-answer-card></app-answer-card>-->
+

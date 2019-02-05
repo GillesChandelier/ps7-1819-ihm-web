@@ -1,0 +1,13 @@
+.photoHolder{
+  float: left;
+  width: 25%;
+  display: inline-block;
+}
+
+.sidenav{
+  height: 40%
+}
+
+.bouton-home {
+  float: right;
+}

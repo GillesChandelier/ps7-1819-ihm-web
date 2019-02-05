@@ -1,0 +1,27 @@
+.card{
+  border: 1px solid grey;
+}
+
+.card-img-top{
+  width: 22rem;
+  height: 22rem;
+  border-bottom: 1px solid grey;
+}
+
+.btn1{
+  color: #e99659;
+  border-radius: 20px;
+  border: 1px solid #e99150;
+}
+
+.btn2{
+  color: #a3da81;
+  border-radius: 20px;
+  border: 1px solid #8eda6a;
+}
+
+.btn3{
+  color: #76acba;
+  border-radius: 20px;
+  border: 1px solid #63a6ba;
+}

@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div style="width: 100%; text-align: center;">
+  <div class="c-row row-title">
+    <h1 class="title">PolyMuseum - Gérant</h1>
+    <nav class="navbar">
+      <a class="navbar-brand">
+        <img src="http://localhost:8081/assets/pictures/manager.png" width="30" height="30"
+             class="d-inline-block align-top" alt="">
+        Statistiques
+      </a>
+      <a class="nav-link" (click)="openTable()">Photos</a>
+      <a class="nav-link" (click)="openGraph()">Participation</a>
+      <a class="nav-link" (click)="openGuide()">Guide</a>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="main-page" *ngIf="!showFiller && !isGuide">
+      <mat-tab-group>
+        <mat-tab label="Le nombre de photos partagées">
+          <h3 style="margin-top: 3%">Le nombre de photos partagées par thème</h3>
+          <div style="display: block;width: 80%; height: 80%; text-align: center; margin: 0 auto">
+            <canvas baseChart
+                    [data]="doughNombrePhotoData"
+                    [labels]="doughNombrePhotoLabel"
+                    [chartType]="doughnutChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </mat-tab>
+        <mat-tab label="Le taux de photos partagées">
+          <h3 style="margin-top: 3%">Le taux de photos partagées par thème</h3>
+          <div style="display: block;width: 80%; height: 80%; text-align: center;margin: 0 auto">
+            <canvas baseChart
+                    [datasets]="barChartTauxPhotoData"
+                    [labels]="doughNombrePhotoLabel"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div class="graph" *ngIf="showFiller && !isGuide">
+      <mat-tab-group>
+          <mat-tab label="Taux de participation par profil">
+              <h3 style="margin-top: 3%">Taux de participation aux quizz en fonction du profil</h3>
+              <div style="display: block; width: 80%; height: 80%; text-align: center;margin: 0 auto">
+                <canvas baseChart
+                        [datasets]="barChartProfileData"
+                        [labels]="barChartProfileLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+              </div>
+            </mat-tab>
+        <mat-tab label="Taux de participation par âge">
+          <h3 style="margin-top: 3%">Taux de participation aux quizz par tranche d'âge</h3>
+          <div style="display: block;width: 80%; height: 80%; text-align: center;margin: 0 auto">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div class="graph" *ngIf="isGuide && showFiller">
+        <mat-tab label="Le taux de bonnes réponses aux quizz">
+          <h3 style="margin-top: 3%">Le taux de bonnes réponses en fonction du guide</h3>
+          <div style="display: block;width: 80%; height: 80%; text-align: center;margin: 0 auto">
+            <canvas baseChart
+                    [datasets]="barChartGuideData"
+                    [labels]="barChartGuideLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </mat-tab>
+    </div>
+  </div>
+</div>
+
+

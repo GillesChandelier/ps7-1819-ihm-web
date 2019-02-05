@@ -1,0 +1,38 @@
+<div class="card" style="width: 22rem; height: 35rem">
+  <img class="card-img-top" src="{{photo.path}}" alt="Card image cap"
+       placement="bottom"
+       container="body"
+       (click)="p.open()"
+       triggers="manual"
+       #p="ngbPopover"
+       [autoClose]="false"
+       [ngbPopover]="popContent" [popoverTitle]="popTitle">
+  <div class="card-body">
+    <h5 class="card-title">le theme de photo</h5>
+    <button type="button" class="btn1" disabled="disabled">
+      La Plus Belle <span class="badge badge-light">{{tags[0]}}&nbsp;<img id="belle" src="assets/pictures/like.png" (click)="addATag($event)" style="width: 15px; height: 15px;"></span>
+    </button><br/>
+    <button type="button" class="btn2" disabled="disabled">
+      La Plus Interessante <span class="badge badge-light">{{tags[1]}}&nbsp;<img id="interest" src="assets/pictures/like.png" (click)="addATag($event)" style="width: 15px; height: 15px;"></span>
+    </button>
+    <br/>
+    <button type="button" class="btn3" disabled="disabled">
+      La Plus Fun <span class="badge badge-light">{{tags[2]}}&nbsp;<img id="fun" src="assets/pictures/like.png" (click)="addATag($event)" style="width: 15px; height: 15px;"></span>
+    </button>
+  </div>
+</div>
+
+  <ng-template #popTitle>Rajoutez-vous des tags?</ng-template>
+  <ng-template #popContent>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label formArrayName="tagAjoute" *ngFor="let tag of form.controls.tagAjoute.controls; let i = index">
+        <input type="checkbox" [formControlName]="i">
+        {{tagAjoute[i].tag}}
+      </label>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="p.close()" (click)="submit()">Rajouter</button>
+        <button class="btn btn-outline-secondary" type="button" (click)="p.close()">Annuler</button>
+      </div>
+    </form>
+  </ng-template>
+

@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div *ngIf="!displayBestPhoto" class="contentGuide">
+  <div class="c-row row-title" *ngIf="!stat" style="display: inline-block">
+    <img src="http://localhost:8081/assets/pictures/guide.svg" style="width: 40px; height: 40px; float: left; margin-top: 5px">
+    <h5 style="float: left; color: white; margin-left: 10px ;margin-top: 15px">Guide</h5>
+    <h1 class="title">PolyMuseum - Guide</h1>
+  </div>
+  <div class="sendQuiz" *ngIf="!stat">
+    <div class="activity">
+      <div class="afficheActivity">
+        <h2 (click)="afficher()">Quiz</h2>
+        <h2>Jeu collectif</h2>
+        <h2>Animation</h2>
+        <h2>Repose</h2>
+        <h2 (click)="getBestPhoto()">Voir la meilleure photo</h2>
+      </div>
+    </div>
+
+    <div class="bntSend" *ngIf="!stat">
+      <div style="height: 100%;">
+      <h1 *ngIf="!lance" style="margin: 40% 5%;">Lancez une activité</h1>
+      <input *ngIf="lance" type="button" value="Envoyer le quizz" style="margin: 40% 5%;"
+             class="button button-quizz button-blue" (click)="launchQuizz()"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="full" *ngIf="stat">
+    <div class="row row-title" style="display: inline-block">
+      <img src="http://localhost:8081/assets/pictures/guide.svg" style="width: 40px; height: 40px; float: left ;margin-top: 5px">
+      <h5 style="float: left; color: white; margin-left: 10px ;margin-top: 15px">Guide</h5>
+      <h1 class="title" style="margin: 0 auto">Statistiques des membres du groupe</h1>
+    </div>
+    <div class="stat-card" style="text-align: left">
+      <div class="stat-card-title">Taux de participation</div>
+      <div class="stat-card-data">{{nbParticipant}} utilisateurs connectés / {{participants}} participants</div>
+      <div class="bar bar-purple">
+        <div class="percentage has-tip" id="tp" style="width: 0%" data-perc="0%"></div>
+      </div>
+    </div>
+    <div class="stat-card" style="text-align: left">
+      <div class="stat-card-title">Taux de questions passées</div>
+      <div class="stat-card-data"> {{nbQuestionPassed}} questions passées / {{nbQuestionAnswered}} questions répondues
+      </div>
+      <div class="bar bar-red">
+        <div class="percentage has-tip" id="tqp" style="width: 0%" data-perc="0%"></div>
+      </div>
+    </div>
+    <div class="stat-card" style="text-align: left">
+      <div class="stat-card-title">Taux de bonnes réponses</div>
+      <div class="stat-card-data">{{nbQuestionGood}} questions justes / {{nbQuestionAnswered}} questions répondues</div>
+      <div class="bar">
+        <div class="percentage has-tip" id="tqbp" style="width: 0%" data-perc="0%"></div>
+      </div>
+    </div>
+    <div class="stat-card" style="text-align: left">
+      <div class="stat-card-title">Quizz terminés</div>
+      <div class="stat-card-data">{{nbQuizFinished}} quizz terminés / {{nbParticipant}} quizz commencés</div>
+      <div class="bar bar-green">
+        <div class="percentage has-tip" id="qt" style="width: 0%" data-perc="0%"></div>
+      </div>
+    </div>
+    <div class="stat-card" id="moyenne" style="display: none; text-align: left">
+      <div class="stat-card-data">Moyenne des résultats par participant sur {{nbQuestionAnswered / nbParticipant}}
+        questions : {{(nbQuestionGood / nbParticipant).toFixed(2)}}</div>
+    </div>
+    <div style="text-align: center">
+      <button id="terminer" class="btn btn-secondary btn-lg" (click)="goBack()">Terminer le quizz</button>
+    </div>
+  </div>
+
+
+</div>
+
+<div *ngIf="displayBestPhoto">
+
+  <app-photo [photo]="bestPhoto"></app-photo>
+  <button (click)="dialogue(warn)">Poster sur FB</button>
+  <button (click)="goBack()">Retour</button>
+</div>
+
+<ng-template #warn let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title">Partage sur facebook</h3>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input id="description" type="text" placeholder="Entrez une description" (change)="getDescriptionValue($event)"/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="share();modal.close()">Partager
+    </button>
+  </div>
+</ng-template>

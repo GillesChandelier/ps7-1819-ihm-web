@@ -1,0 +1,228 @@
+.title-quizz-ended{
+  text-align: center;
+  margin: 36% 5%;
+}
+
+.myContainer{
+  text-align: center;
+  margin: 36% 5%;
+}
+
+.button-next {
+  margin-top: 5%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 24px;
+  border: 1px solid #524f4f;
+  border-radius: 8px;
+  background: #6b6b6b;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6b6b6b), to(#ababab));
+  background: -moz-linear-gradient(top, #6b6b6b, #ababab);
+  background: linear-gradient(to bottom, #6b6b6b, #ababab);
+  text-shadow: #000000 1px 1px 1px;
+  font: normal normal bold 20px arial;
+  color: #ffffff;
+  text-decoration: none;
+}
+.button-next:hover,
+.button-next:focus {
+  border: 1px solid #837e7e;
+  background: #808080;
+  background: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#cdcdcd));
+  background: -moz-linear-gradient(top, #808080, #cdcdcd);
+  background: linear-gradient(to bottom, #808080, #cdcdcd);
+  color: #ffffff;
+  text-decoration: none;
+}
+.button-next:active {
+  background: #404040;
+  background: -webkit-gradient(linear, left top, left bottom, from(#404040), to(#ababab));
+  background: -moz-linear-gradient(top, #404040, #ababab);
+  background: linear-gradient(to bottom, #404040, #ababab);
+}
+
+
+.bar {
+  /* font-size: 10px */
+  margin-bottom: 50px;
+  width: 30em;
+  height: 1em;
+  border-radius: 0.5em;
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1)
+}
+.in-bar {
+  border-radius: 0.5em;
+  height: 1em;
+  position: relative
+}
+.has-tip:before,
+.has-tip:after {
+  content: "";
+  position: absolute;
+  /*opacity: 0;*/
+}
+.has-tip:before {
+  bottom: -10px;
+  right: -5px;
+  border: 5px solid;
+  border-color: transparent transparent #4CAF50 transparent;
+  transition: opacity 0.1s;
+}
+.has-tip:after {
+  content: attr(data-perc);/*Le contenu de la bulle*/
+  bottom: 0;
+  right: 0;
+  white-space: nowrap;
+  padding: 0.6em 1em;
+  border-radius: 2em;
+  line-height: 1;
+  color: #fff;
+  background: #4CAF50;
+  transition: transform 0.2s, opacity 0.1s;
+  transform: translateX(50%) translateY(100%) translateY(10px);
+}
+.has-tip-false:before {
+  bottom: -10px;
+  right: -5px;
+  border: 5px solid;
+  border-color: transparent transparent #AF0300 transparent;
+  transition: opacity 0.1s;
+}
+.has-tip-false:after {
+  content: attr(data-perc);/*Le contenu de la bulle*/
+  bottom: 0;
+  right: 0;
+  white-space: nowrap;
+  padding: 0.6em 1em;
+  border-radius: 2em;
+  line-height: 1;
+  color: #fff;
+  background: #AF0300;
+  transform: translateX(50%) translateY(100%) translateY(10px);
+  transition: transform 0.2s, opacity 0.1s;
+}
+.has-tip-na:before {
+  bottom: -10px;
+  right: -5px;
+  border: 5px solid;
+  border-color: transparent transparent #969696 transparent;
+  transition: opacity 0.1s;
+}
+.has-tip-na:after {
+  content: attr(data-perc);/*Le contenu de la bulle*/
+  bottom: 0;
+  right: 0;
+  white-space: nowrap;
+  padding: 0.6em 1em;
+  border-radius: 2em;
+  line-height: 1;
+  color: #fff;
+  background: #969696;
+  transform: translateX(50%) translateY(100%) translateY(10px);
+  transition: transform 0.2s, opacity 0.1s;
+}
+/*.has-tip:hover:before,*/
+/*.has-tip.active:before {*/
+  /*opacity: 1;*/
+/*}*/
+
+/*.has-tip:hover:after,*/
+/*.has-tip.active:after {*/
+  /*opacity: 1;*/
+  /*transform: translateX(50%) translateY(100%) translateY(10px);*/
+/*}*/
+
+
+.True {
+  color:#EEEAEC!important;
+  background-color:#4CAF50!important
+}
+.False {
+  color:#EEEAEC!important;
+  background-color:#AF0300!important
+}
+.NA {
+  color:#EEEAEC!important;
+  background-color:#969696!important
+}
+
+#partage{
+  float: right;
+}
+
+.upload{
+  font-size: 16px;
+}
+.button-quizz {
+  cursor: pointer;
+  border: 2px solid black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.0em;
+  height: 100%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  width: 45%;
+  transition-duration: 0.4s;
+}
+
+.button-yellow {
+  background-color: #F7CA18;
+  border-color : #F7CA18;
+}
+
+.uploadPhoto{
+  display: inline-block;
+  width: 60%;
+}
+
+#image{
+  width: 100%;
+  height: 100%;
+}
+
+.modal-body{
+  width: 100%;
+  height: 100%;
+}
+
+#tag{
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+}
+
+
+.quizFinished {
+  text-align: center;
+  background: #8fd5a2;
+  color:white;
+  width: 50%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 720px;
+}
+
+
+.partagerPhoto {
+  background: #5b7b79;
+  color:white;
+  width: 50%;
+  float: right;
+  margin: 0;
+  height: 720px;
+  padding: 0;
+  text-align: center;
+}
+
+.context{
+  display: inline-block;
+  width: 100%;
+  height: 720px;
+  margin: 0;
+  padding: 0;
+}

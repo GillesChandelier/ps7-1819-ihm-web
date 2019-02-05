@@ -1,0 +1,16 @@
+<div *ngIf="!isFinished">
+  <div *ngIf="quizz;else nullCase ">
+
+    <div class="row">
+      <h1 class="title-quizz">Quizz : {{quizz.thematic}} </h1>
+    </div>
+
+    <app-question [idQuestion]="idQuestion" (nextQuestion)="displayNextQuestion(event)"></app-question>
+  </div>
+</div>
+<div *ngIf="isFinished">
+  <app-quizz-personal-result [idQuizz]="quizz._id" [idGroupe]="idGroupe" [theme]="quizz.thematic"></app-quizz-personal-result>
+</div>
+
+
+<ng-template nullCase>Loading data...</ng-template>

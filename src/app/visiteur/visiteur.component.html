@@ -1,0 +1,36 @@
+<div class="row row-title">
+  <h1 class="title">PolyMuseum</h1>
+</div>
+
+<div class="row">
+  <div class="col-5">
+    <div class="card">
+      <div class="stat-card-title">Activités</div>
+      <div class="stat-card-data">
+        <div *ngIf="launchQuiz;else nullCase">
+          <button routerLink="/quiz" class="button-custom button-green">Démarrer l'activité</button>
+          <button (click)="refuseQuizz()" class="button-custom button-grey">Ne pas participer</button>
+        </div>
+        <ng-template #nullCase>
+          <div>En attente d'activité</div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-card-title">Album</div>
+      <div class="stat-card-data">
+        <button routerLink="/photos" class="button-custom button-blue" (click)="acceptQuizz()">Visualiser l'album</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-5" style="float:right;">
+    <div class="card full-height">
+      <div class="stat-card-title">Utilisateurs connectés</div>
+      <div class="stat-card-data">
+        <ul>
+          <li *ngFor="let visiteur of visiteurs">{{ visiteur }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

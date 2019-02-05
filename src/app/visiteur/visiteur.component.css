@@ -1,0 +1,19 @@
+.card {
+  background: #fdfdfd;
+  -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  margin: 0.5em;
+}
+
+.stat-card-title {
+  font-weight: bold;
+  border-bottom: 1px solid #c5c5c5;
+  padding-bottom: 0.5em;
+}
+
+.stat-card-data {
+  padding: 0.3em 0 0 0;
+}

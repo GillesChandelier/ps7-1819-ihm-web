@@ -1,0 +1,188 @@
+.stat-card {
+  background: #fdfdfd;
+  -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  margin: 0.5em;
+}
+
+.stat-card-title {
+  font-weight: bold;
+  border-bottom: 1px solid #c5c5c5;
+  padding-bottom: 0.5em;
+}
+
+.stat-card-data {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.full{
+  background: #e5e5e5;
+  width: 100%;
+  height: 100%;
+}
+
+.sendQuiz{
+  background: #e5e5e5;
+  width: 100%;
+  height: 100vh;
+}
+
+.full{
+  text-align: center;
+}
+
+.bar {
+    width: 100%;
+    height: 1em;
+    border-radius: 0.5em;
+    position: relative;
+    background: #f2f2f2;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  }
+
+  .bar .percentage {
+    transition: all 1s ease 0s;
+    position: relative;
+    font-size: 1em;
+    background: #006df0;
+    height: 1em;
+    border-radius: 0.5em;
+  }
+
+  .has-tip:before,
+  .has-tip:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+  }
+
+  .has-tip:before {
+    bottom: -10px;
+    right: -5px;
+    border: 5px solid;
+    border-color: transparent transparent #006df0 transparent;
+    transition: opacity 0.1s;
+  }
+
+  .has-tip:after {
+    content: attr(data-perc);
+    bottom: 0;
+    right: 0;
+    white-space: nowrap;
+    padding: 0.6em 1em;
+    border-radius: 2em;
+    line-height: 1;
+    color: #fff;
+    background: #006df0;
+    transform: translateX(50%) translateY(100%);
+    transition: transform 0.2s, opacity 0.1s;
+  }
+
+  .has-tip:hover:before,
+  .has-tip.active:before {
+    opacity: 1;
+  }
+
+  .has-tip:hover:after,
+  .has-tip.active:after {
+    opacity: 1;
+    transform: translateX(50%) translateY(100%) translateY(10px);
+  }
+
+  .bar-purple .percentage, .bar-purple .has-tip:after {
+    background: #933ec5
+  }
+
+  .bar-purple .has-tip:before {
+    border-color: transparent transparent #933ec5 transparent;
+  }
+
+  .bar-red .percentage, .bar-red .has-tip:after {
+    background: #d80027
+  }
+
+  .bar-red .has-tip:before {
+    border-color: transparent transparent #d80027 transparent;
+  }
+
+  .bar-green .percentage, .bar-green .has-tip:after {
+    background: #65b12d
+  }
+
+  .bar-green .has-tip:before {
+    border-color: transparent transparent #65b12d transparent;
+  }
+
+.button-quizz {
+  cursor: pointer;
+  border: 2px solid black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  height: 50px;
+  width: auto;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.button-blue {
+  background-color: #619422;
+  border-color : white;
+}
+
+.contentGuide{
+  display: inline-block;
+  position:relative;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.activity{
+  float: left;
+  width: 50%;
+  background: #386f7b;
+  text-align: center;
+  height: 100%;
+}
+
+.bntSend{
+  background: #619422;
+  float: right;
+  width: 50%;
+  text-align: center;
+  height: 100vh;
+
+}
+
+h1, h2{
+  color: white;
+}
+
+.afficheActivity{
+  height: 100%;
+  width: 100%;
+  margin: 35% 25%;
+  text-align: left;
+}
+
+input {
+  width:100%;
+}
+
+#terminer{
+  margin: 0 auto;
+}

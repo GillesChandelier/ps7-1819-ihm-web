@@ -1,0 +1,82 @@
+.buttons {
+    margin-top: 5%;
+    margin-left:30%;
+}
+
+.tab{
+    margin-top:15%;
+    margin-left:10%
+}
+
+.menu-bar{
+  float: left;
+  width: 10%;
+  background-color: #386f7b;
+  border-right: 1px solid #6b6b6b;
+  height: 100vh;
+}
+
+.main-page,.graph{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border: solid 1px black;
+}
+
+#img,#manager,#data-table,#graph{
+  width: 40px;
+  height: 40px;
+}
+
+#manager{
+  border-radius: 50%;
+}
+
+.example-sidenav-content{
+  margin-left: 10px;
+}
+
+#manager{
+  width: 60px;
+  height: 60px;
+}
+
+.list-group-item{
+  font-size: 16px;
+  color: #386f7b;
+}
+
+
+.menu-top{
+  width: 100%;
+  height: auto;
+}
+
+#img{
+  margin-left: 15px;
+}
+
+.toolbar{
+  width: 100%;
+  height: auto;
+  background-color: #386f7b;
+}
+
+h2{
+  color: white;
+}
+
+.content{
+  display: inline-block;
+  width:100%;
+}
+
+.navbar{
+  width: 50%;
+  color: white;
+  font-size: 18px;
+}

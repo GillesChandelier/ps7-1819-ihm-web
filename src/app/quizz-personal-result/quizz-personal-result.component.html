@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="context">
+  <div class="quizFinished">
+    <div>
+    <h1 class="title-quizz-ended">Quizz terminé !<br/>
+      <button type="button" class="btn btn-outline-light" style="margin-top: 16%" (click)="dialogue(warn)">Retour a l'acueil!</button></h1>
+    </div>
+  </div>
+
+  <div class="partagerPhoto">
+    <div class="myContainer">
+      <h1>Partagez-vous une photo préférée?</h1>
+      <button type="button" class="btn btn-outline-light" (click)="open(content)" style="margin-top: 15%">Partagez une photo</button>&nbsp;&nbsp;&nbsp;
+      <button type="button" routerLink="/photos" class="btn btn-outline-light" style="margin-top: 15%">Pas de photos? Voir les autres!</button>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h2 class="modal-title" id="modal-basic-title">Partager une photo</h2>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="uploadPhoto">
+            <input type="file" class="button upload uploadImage" ng2FileSelect [uploader]="uploader"
+                   (change)="selectedFileOnChanged($event)"/>
+          </div>
+          <hr>
+          <br/>
+          <img id="image" [src]="url" *ngIf="show"/>
+
+          <h5>Entrez 3 tags au plus</h5>
+          <tag-input id="tag" [ngModel]="tags"
+                     [maxItems]="3"
+                     [ripple]="false"
+                     [theme]="'bootstrap'"
+                     placeholder="Entrez un nouveau tag"
+                     (ngModelChange)="addTags($event)">
+          </tag-input>
+        </div>
+        <div class="modal-footer">
+          <button type="button" routerLink="/photos" class="btn btn-outline-dark" (click)="modal.close()" (click)="partage()">Partagez
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #warn let-modal>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-basic">Voulez-vous pas partager une photo?</h2>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Vous ne voulez pas partager ou voir les photos?
+    </div>
+    <div class="modal-footer">
+      <button type="button" routerLink="/visiteur" class="btn btn-outline-secondary" (click)="modal.close()">Je prefere me reposer
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.close()">OK, je vais partager les photos
+      </button>
+    </div>
+  </ng-template>
+
+</div>
+
+

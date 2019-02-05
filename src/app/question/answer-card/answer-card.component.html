@@ -1,0 +1,26 @@
+<div class="row card" *ngIf="!show">
+  <div class="row button-row">
+    <input type="button" value="{{Answer[0].text}}" class="button button-quizz button-blue" (click)="displayAnswer($event)"/>
+    <input type="button" value="{{Answer[1].text}}" class="button button-quizz button-red" (click)="displayAnswer($event)"/>
+  </div>
+  <div class="row button-row">
+    <input type="button" value="{{Answer[2].text}}" class="button button-quizz button-yellow" (click)="displayAnswer($event)"/>
+    <input type="button" value="{{Answer[3].text}}" class="button button-quizz button-green" (click)="displayAnswer($event)"/>
+  </div>
+  <div class="row button-row-pass">
+    <input type="button" value="Passer" class="button button-quizz button-grey" (click)="passToNextQuestion($event)" />
+  </div>
+</div>
+
+<div class="row card" *ngIf="show">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <div class="row" *ngIf="answerCheck">
+    <i class="fas fa-check check" *ngIf="answerCheck.check"></i>
+    <i class="fas fa-times cross" *ngIf="!answerCheck.check"></i>
+    <p class="response-text">{{response}}</p>
+    <p class="response-text">{{rightAnswer}}</p>
+  </div>
+  <div class="row">
+    <input type="button" value="Suivant" class="button button-quizz button-next" (click)="displayNextQuestion()"/>
+  </div>
+</div>
